@@ -53,3 +53,15 @@ function showResults(userOption) {
   playerScoreSpanElement.innerText = playerScore;
   computerScoreSpanElement.innerText = computerScore;
 }
+
+ // Check for a winner
+ if (playerScore === 3) {
+    winnerMsgElement.innerText = "Player has won the game!";
+    resetGameBtn.style.display = "block"; // Show reset button
+    optionsContainer.style.display = "none"; // Hide options
+  } else if (computerScore === 3) {
+    winnerMsgElement.innerText = "Computer has won the game!";
+    resetGameBtn.style.display = "block"; // Show reset button
+    optionsContainer.style.display = "none"; // Hide options
+  }
+}
