@@ -64,3 +64,38 @@ if (playerScore === 3) {
   resetGameBtn.style.display = "block"; // Show reset button
   optionsContainer.style.display = "none"; // Hide options
 }
+function resetGame() {
+  // Reset player and computer scores to 0
+  playerScore = 0;
+  computerScore = 0;
+
+  // Update the displayed scores
+  playerScoreSpanElement.innerText = playerScore;
+  computerScoreSpanElement.innerText = computerScore;
+
+  // Hide the reset button and show options for a new game
+  resetGameBtn.style.display = "none";
+  optionsContainer.style.display = "block";
+
+  // Clear any messages from previous games
+  winnerMsgElement.innerText = "";
+  roundResultsMsg.innerText = "";
+}
+
+resetGameBtn.addEventListener("click", resetGame);
+
+const rockBtn = document.getElementById("rock-btn");
+const paperBtn = document.getElementById("paper-btn");
+const scissorsBtn = document.getElementById("scissors-btn");
+
+rockBtn.addEventListener("click", function () {
+  showResults("Rock");
+});
+
+paperBtn.addEventListener("click", function () {
+  showResults("Paper");
+});
+
+scissorsBtn.addEventListener("click", function () {
+  showResults("Scissors");
+});
